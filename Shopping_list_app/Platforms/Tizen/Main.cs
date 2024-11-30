@@ -2,7 +2,7 @@ using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 using System;
 
-namespace Shopping_list_app
+namespace ShoppingListApp
 {
     internal class Program : MauiApplication
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace Shopping_list_app
+namespace ShoppingListApp
 {
     public static class MauiProgram
     {

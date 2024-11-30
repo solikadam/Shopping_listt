@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace Shopping_list_app
+namespace ShoppingListApp
 {
     [Application]
     public class MainApplication : MauiApplication

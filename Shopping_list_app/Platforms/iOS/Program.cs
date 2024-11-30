@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace Shopping_list_app
+namespace ShoppingListApp
 {
     public class Program
     {

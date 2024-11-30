@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShoppingListApp.Views.AddProductPage">
+    <StackLayout Padding="10">
+        <Label Text="Nazwa produktu" />
+        <Entry x:Name="ProductNameEntry" Placeholder="Wpisz nazwę produktu" />
+        <Label Text="Ilość" />
+        <Entry x:Name="ProductQuantityEntry" Placeholder="Wpisz ilość" Keyboard="Numeric" />
+        <Label Text="Jednostka" />
+        <Picker x:Name="ProductUnitPicker" Title="Wybierz jednostkę" />
+        <Label Text="Kategoria" />
+        <Picker x:Name="CategoryPicker" Title="Wybierz kategorię" />
+        <Button Text="Dodaj produkt" Clicked="AddProductButton_Clicked" />
+    </StackLayout>
+</ContentPage>

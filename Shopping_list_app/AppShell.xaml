@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Shell
-    x:Class="Shopping_list_app.AppShell"
+    x:Class="ShoppingListApp.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:Shopping_list_app"
+    xmlns:local="clr-namespace:ShoppingListApp"
     Shell.FlyoutBehavior="Disabled"
-    Title="Shopping_list_app">
+    Title="ShoppingListApp">
 
     <ShellContent
         Title="Home"

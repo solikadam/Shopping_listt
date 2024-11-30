@@ -1,7 +1,6 @@
 ﻿using Foundation;
 
-namespace Shopping_list_app
-{
+namespace  ShoppingListApp { 
     [Register("AppDelegate")]
     public class AppDelegate : MauiUIApplicationDelegate
     {

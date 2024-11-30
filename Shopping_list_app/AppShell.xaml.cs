@@ -1,4 +1,4 @@
-﻿namespace Shopping_list_app
+﻿namespace ShoppingListApp
 {
     public partial class AppShell : Shell
     {
