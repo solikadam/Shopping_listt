@@ -25,11 +25,17 @@ namespace ShoppingListApp.Views
             ProductUnitPicker.Items.Add("l");
             ProductUnitPicker.Items.Add("g");
             ProductUnitPicker.Items.Add("ml");
+
+            // Wype³nij Picker dostêpnymi produktami
+            foreach (var product in Product.AvailableProducts)
+            {
+                ProductPicker.Items.Add(product.Name);
+            }
         }
 
         private async void AddProductButton_Clicked(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(ProductNameEntry.Text) &&
+            if (!string.IsNullOrWhiteSpace(NewProductNameEntry.Text) &&
                 !string.IsNullOrWhiteSpace(ProductQuantityEntry.Text) &&
                 ProductUnitPicker.SelectedIndex >= 0 &&
                 CategoryPicker.SelectedIndex >= 0)
@@ -37,10 +43,36 @@ namespace ShoppingListApp.Views
                 var selectedCategory = ShoppingList.Categories.ElementAt(CategoryPicker.SelectedIndex);
                 var newProduct = new Product
                 {
-                    Name = ProductNameEntry.Text,
+                    Name = NewProductNameEntry.Text,
                     Quantity = int.Parse(ProductQuantityEntry.Text),
                     Unit = ProductUnitPicker.SelectedItem.ToString()
                 };
+
+                // Dodaj nowy produkt do globalnej listy dostêpnych produktów
+                Product.AvailableProducts.Add(newProduct);
+
+                // Dodaj nowy produkt do wybranej kategorii
+                selectedCategory.Products.Add(newProduct);
+
+                // Odœwie¿ interfejs u¿ytkownika
+                OnPropertyChanged(nameof(ShoppingList));
+
+                await Navigation.PopAsync();
+            }
+            else if (ProductPicker.SelectedIndex >= 0 &&
+                     !string.IsNullOrWhiteSpace(ProductQuantityEntry.Text) &&
+                     CategoryPicker.SelectedIndex >= 0)
+            {
+                var selectedCategory = ShoppingList.Categories.ElementAt(CategoryPicker.SelectedIndex);
+                var selectedProduct = Product.AvailableProducts.ElementAt(ProductPicker.SelectedIndex);
+                var newProduct = new Product
+                {
+                    Name = selectedProduct.Name,
+                    Quantity = int.Parse(ProductQuantityEntry.Text),
+                    Unit = selectedProduct.Unit
+                };
+
+                // Dodaj wybrany produkt do wybranej kategorii
                 selectedCategory.Products.Add(newProduct);
 
                 // Odœwie¿ interfejs u¿ytkownika
@@ -55,3 +87,4 @@ namespace ShoppingListApp.Views
         }
     }
 }
+

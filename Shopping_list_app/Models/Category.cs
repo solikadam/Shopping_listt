@@ -2,6 +2,10 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
 namespace ShoppingListApp.Models
 {
     public class Category : INotifyPropertyChanged
@@ -45,3 +49,5 @@ namespace ShoppingListApp.Models
         }
     }
 }
+
+

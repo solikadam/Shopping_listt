@@ -3,8 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShoppingListApp.Views.AddProductPage">
     <StackLayout Padding="10">
-        <Label Text="Nazwa produktu" />
-        <Entry x:Name="ProductNameEntry" Placeholder="Wpisz nazwę produktu" />
+        <Label Text="Wybierz produkt" />
+        <Picker x:Name="ProductPicker" Title="Wybierz produkt" />
+        <Label Text="Lub dodaj nowy produkt" />
+        <Entry x:Name="NewProductNameEntry" Placeholder="Wpisz nazwę nowego produktu" />
         <Label Text="Ilość" />
         <Entry x:Name="ProductQuantityEntry" Placeholder="Wpisz ilość" Keyboard="Numeric" />
         <Label Text="Jednostka" />
@@ -14,3 +16,4 @@
         <Button Text="Dodaj produkt" Clicked="AddProductButton_Clicked" />
     </StackLayout>
 </ContentPage>
+

@@ -28,5 +28,9 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/appicon.appiconset</string>
+	<key>NSFileProviderDomainUsageDescription</key>
+	<string>Aplikacja potrzebuje dostępu do plików, aby zapisywać i odczytywać listy zakupów.</string>
+	<key>NSFileProviderReadWrite</key>
+	<true/>
 </dict>
 </plist>

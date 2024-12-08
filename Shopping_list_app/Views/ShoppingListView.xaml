@@ -6,6 +6,9 @@
     <StackLayout Padding="10">
         <Label Text="{Binding Name}" FontSize="24" FontAttributes="Bold" />
         <Button Text="Dodaj produkt" Clicked="AddProductButton_Clicked" />
+        <Button Text="Dodaj kategorię" Clicked="AddCategoryButton_Clicked" />
+        <Button Text="Eksportuj listę" Clicked="ExportListButton_Clicked" />
+        <Button Text="Importuj listę" Clicked="ImportListButton_Clicked" />
         <CollectionView ItemsSource="{Binding Categories}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
@@ -15,3 +18,10 @@
         </CollectionView>
     </StackLayout>
 </ContentPage>
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShoppingListApp.Views.AddCategoryPage">
+    <StackLayout Padding="10">
+        <Label Text="Nazwa nowej kategorii" />
+        <Entry x:Name="CategoryNameEntry" Placeholder="Wpisz nazwę kategorii" />
+        <Button Text="Dodaj kategorię" Clicked="AddCategoryButton_Clicked" />
+    </StackLayout>
+</ContentPage>
+

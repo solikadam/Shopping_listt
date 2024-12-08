@@ -5,6 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using System.IO;
+
+using System.IO;
+using System.Xml.Serialization;
 
 namespace ShoppingListApp.Services
 {
@@ -32,26 +36,16 @@ namespace ShoppingListApp.Services
             return new ShoppingList();
         }
 
-        public void ExportShoppingList(ShoppingList shoppingList, string filePath)
+        public void ExportShoppingList(ShoppingList shoppingList, Stream fileStream)
         {
             var serializer = new XmlSerializer(typeof(ShoppingList));
-            using (var writer = new StreamWriter(filePath))
-            {
-                serializer.Serialize(writer, shoppingList);
-            }
+            serializer.Serialize(fileStream, shoppingList);
         }
 
-        public ShoppingList ImportShoppingList(string filePath)
+        public ShoppingList ImportShoppingList(Stream fileStream)
         {
-            if (File.Exists(filePath))
-            {
-                var serializer = new XmlSerializer(typeof(ShoppingList));
-                using (var reader = new StreamReader(filePath))
-                {
-                    return (ShoppingList)serializer.Deserialize(reader);
-                }
-            }
-            return new ShoppingList();
+            var serializer = new XmlSerializer(typeof(ShoppingList));
+            return (ShoppingList)serializer.Deserialize(fileStream);
         }
     }
 }

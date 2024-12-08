@@ -1,17 +1,18 @@
 using ShoppingListApp.Models;
 
-namespace ShoppingListApp.Views;
-
-public partial class CategoryView : ContentView
+namespace ShoppingListApp.Views
 {
-    public CategoryView()
+    public partial class CategoryView : ContentView
     {
-        InitializeComponent();
-    }
+        public CategoryView()
+        {
+            InitializeComponent();
+        }
 
-    private void ToggleExpand(object sender, EventArgs e)
-    {
-        var category = (Category)BindingContext;
-        category.IsExpanded = !category.IsExpanded;
+        private void ToggleExpand(object sender, EventArgs e)
+        {
+            var category = (Category)BindingContext;
+            category.IsExpanded = !category.IsExpanded;
+        }
     }
 }

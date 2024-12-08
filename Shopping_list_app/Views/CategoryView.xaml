@@ -3,15 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:ShoppingListApp.Views"
              x:Class="ShoppingListApp.Views.CategoryView">
-    <StackLayout>
-        <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" />
-        <Button Text="Rozwiń" Clicked="ToggleExpand" />
-        <CollectionView ItemsSource="{Binding Products}" IsVisible="{Binding IsExpanded}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <views:ProductView />
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </StackLayout>
+    <Frame Padding="10" Margin="5" HasShadow="True" BackgroundColor="#393939">
+        <StackLayout>
+            <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" />
+            <Button Text="Rozwiń" Clicked="ToggleExpand" />
+            <CollectionView ItemsSource="{Binding Products}"
+                            IsVisible="{Binding IsExpanded}"
+                            HeightRequest="200">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <views:ProductView />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </Frame>
 </ContentView>
+
+
