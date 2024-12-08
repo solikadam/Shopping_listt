@@ -26,7 +26,7 @@ namespace ShoppingListApp.Views
         private void DeleteProduct(object sender, EventArgs e)
         {
             var product = (Product)BindingContext;
-            var category = (Category)this.Parent.Parent.BindingContext;
+            var category = (Category)((ContentView)Parent).BindingContext;
             category.Products.Remove(product);
         }
 

@@ -75,5 +75,10 @@ namespace ShoppingListApp.Views
                 await DisplayAlert("B³¹d", $"Wyst¹pi³ problem podczas importu: {ex.Message}", "OK");
             }
         }
+
+        private async void ShowShoppingListToBuyButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ShoppingListToBuyView(ShoppingList));
+        }
     }
 }

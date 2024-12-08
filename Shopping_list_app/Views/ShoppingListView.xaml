@@ -9,6 +9,7 @@
         <Button Text="Dodaj kategorię" Clicked="AddCategoryButton_Clicked" />
         <Button Text="Eksportuj listę" Clicked="ExportListButton_Clicked" />
         <Button Text="Importuj listę" Clicked="ImportListButton_Clicked" />
+        <Button Text="Lista do sklepu" Clicked="ShowShoppingListToBuyButton_Clicked" />
         <CollectionView ItemsSource="{Binding Categories}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
@@ -18,6 +19,8 @@
         </CollectionView>
     </StackLayout>
 </ContentPage>
+
+
 
 
 

@@ -35,23 +35,19 @@ namespace ShoppingListApp.Views
 
         private async void AddProductButton_Clicked(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(NewProductNameEntry.Text) &&
+            if (ProductPicker.SelectedIndex >= 0 &&
                 !string.IsNullOrWhiteSpace(ProductQuantityEntry.Text) &&
                 ProductUnitPicker.SelectedIndex >= 0 &&
                 CategoryPicker.SelectedIndex >= 0)
             {
                 var selectedCategory = ShoppingList.Categories.ElementAt(CategoryPicker.SelectedIndex);
-                var newProduct = new Product
+                var selectedProduct = Product.AvailableProducts.ElementAt(ProductPicker.SelectedIndex);
+                var newProduct = new Product(selectedCategory)
                 {
-                    Name = NewProductNameEntry.Text,
+                    Name = selectedProduct.Name,
                     Quantity = int.Parse(ProductQuantityEntry.Text),
                     Unit = ProductUnitPicker.SelectedItem.ToString()
                 };
-
-                // Dodaj nowy produkt do globalnej listy dostêpnych produktów
-                Product.AvailableProducts.Add(newProduct);
-
-                // Dodaj nowy produkt do wybranej kategorii
                 selectedCategory.Products.Add(newProduct);
 
                 // Odœwie¿ interfejs u¿ytkownika
@@ -59,21 +55,22 @@ namespace ShoppingListApp.Views
 
                 await Navigation.PopAsync();
             }
-            else if (ProductPicker.SelectedIndex >= 0 &&
+            else if (!string.IsNullOrWhiteSpace(NewProductNameEntry.Text) &&
                      !string.IsNullOrWhiteSpace(ProductQuantityEntry.Text) &&
+                     ProductUnitPicker.SelectedIndex >= 0 &&
                      CategoryPicker.SelectedIndex >= 0)
             {
                 var selectedCategory = ShoppingList.Categories.ElementAt(CategoryPicker.SelectedIndex);
-                var selectedProduct = Product.AvailableProducts.ElementAt(ProductPicker.SelectedIndex);
-                var newProduct = new Product
+                var newProduct = new Product(selectedCategory)
                 {
-                    Name = selectedProduct.Name,
+                    Name = NewProductNameEntry.Text,
                     Quantity = int.Parse(ProductQuantityEntry.Text),
-                    Unit = selectedProduct.Unit
+                    Unit = ProductUnitPicker.SelectedItem.ToString()
                 };
-
-                // Dodaj wybrany produkt do wybranej kategorii
                 selectedCategory.Products.Add(newProduct);
+
+                // Dodaj nowy produkt do globalnej listy dostêpnych produktów
+                Product.AvailableProducts.Add(newProduct);
 
                 // Odœwie¿ interfejs u¿ytkownika
                 OnPropertyChanged(nameof(ShoppingList));
@@ -87,4 +84,6 @@ namespace ShoppingListApp.Views
         }
     }
 }
+
+
 

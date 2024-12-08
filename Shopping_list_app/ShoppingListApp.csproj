@@ -81,6 +81,9 @@
 	  <MauiXaml Update="Views\ProductView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\ShoppingListToBuyView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\ShoppingListView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
