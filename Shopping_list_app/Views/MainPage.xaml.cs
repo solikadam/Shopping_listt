@@ -32,8 +32,6 @@ namespace ShoppingListApp
                 }
             };
 
-            // Dodaj domyślne produkty
-
             ShoppingLists.Add(predefinedList);
         }
 
