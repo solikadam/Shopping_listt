@@ -1,12 +1,5 @@
 ﻿using ShoppingListApp.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
-using System.IO;
-
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Xml.Serialization;
 
@@ -14,26 +7,26 @@ namespace ShoppingListApp.Services
 {
     public class DataService
     {
-        public void SaveShoppingList(ShoppingList shoppingList, string filePath)
+        public void SaveShoppingLists(ObservableCollection<ShoppingList> shoppingLists, string filePath)
         {
-            var serializer = new XmlSerializer(typeof(ShoppingList));
+            var serializer = new XmlSerializer(typeof(ObservableCollection<ShoppingList>));
             using (var writer = new StreamWriter(filePath))
             {
-                serializer.Serialize(writer, shoppingList);
+                serializer.Serialize(writer, shoppingLists);
             }
         }
 
-        public ShoppingList LoadShoppingList(string filePath)
+        public ObservableCollection<ShoppingList> LoadShoppingLists(string filePath)
         {
             if (File.Exists(filePath))
             {
-                var serializer = new XmlSerializer(typeof(ShoppingList));
+                var serializer = new XmlSerializer(typeof(ObservableCollection<ShoppingList>));
                 using (var reader = new StreamReader(filePath))
                 {
-                    return (ShoppingList)serializer.Deserialize(reader);
+                    return (ObservableCollection<ShoppingList>)serializer.Deserialize(reader);
                 }
             }
-            return new ShoppingList();
+            return new ObservableCollection<ShoppingList>();
         }
 
         public void ExportShoppingList(ShoppingList shoppingList, Stream fileStream)

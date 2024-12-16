@@ -1,4 +1,5 @@
 using ShoppingListApp.Models;
+using ShoppingListApp.Views;
 using System;
 using System.Linq;
 
@@ -84,6 +85,3 @@ namespace ShoppingListApp.Views
         }
     }
 }
-
-
-

@@ -2,8 +2,13 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Xml.Serialization;
+
 namespace ShoppingListApp.Models
 {
+    [XmlInclude(typeof(Product))]
     public class Product : INotifyPropertyChanged
     {
         private string name;
@@ -11,6 +16,10 @@ namespace ShoppingListApp.Models
         private int quantity;
         private bool isPurchased;
         private Category category;
+
+        public Product()
+        {
+        }
 
         public Product(Category category)
         {
@@ -69,6 +78,7 @@ namespace ShoppingListApp.Models
             }
         }
 
+        [XmlIgnore]
         public Category Category
         {
             get => category;
@@ -88,8 +98,11 @@ namespace ShoppingListApp.Models
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+    
 
-        // Globalna lista dostępnych produktów
+
+
+// Globalna lista dostępnych produktów
         public static ObservableCollection<Product> AvailableProducts { get; set; } = new ObservableCollection<Product>
         {
             new Product(null) { Name = "Mleko", Unit = "l", Quantity = 1 },

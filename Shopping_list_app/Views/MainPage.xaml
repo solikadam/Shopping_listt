@@ -7,7 +7,10 @@
         <CollectionView ItemsSource="{Binding ShoppingLists}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Button Text="{Binding Name}" Clicked="OpenShoppingListButton_Clicked" CommandParameter="{Binding .}" />
+                    <StackLayout Orientation="Horizontal">
+                        <Button Text="{Binding Name}" Clicked="OpenShoppingListButton_Clicked" CommandParameter="{Binding .}" />
+                        <Button Text="Usuń" Clicked="DeleteShoppingListButton_Clicked" CommandParameter="{Binding .}" BackgroundColor="Red" TextColor="White" />
+                    </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

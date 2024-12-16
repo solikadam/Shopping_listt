@@ -1,13 +1,20 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Xml.Serialization;
 
 namespace ShoppingListApp.Models
 {
+    [XmlInclude(typeof(Product))]
     public class Category : INotifyPropertyChanged
     {
         private string name;
         private bool isExpanded;
+
+        public Category()
+        {
+            Products = new ObservableCollection<Product>();
+        }
 
         public string Name
         {
@@ -45,4 +52,3 @@ namespace ShoppingListApp.Models
         }
     }
 }
-

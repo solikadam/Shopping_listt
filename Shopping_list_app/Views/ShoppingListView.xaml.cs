@@ -1,6 +1,8 @@
 using ShoppingListApp.Models;
 using ShoppingListApp.Services;
 using System;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -79,6 +81,26 @@ namespace ShoppingListApp.Views
         private async void ShowShoppingListToBuyButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ShoppingListToBuyView(ShoppingList));
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            SaveShoppingList();
+        }
+
+        private void SaveShoppingList()
+        {
+            try
+            {
+                string filePath = Path.Combine(FileSystem.AppDataDirectory, "ShoppingLists.xml");
+                var shoppingLists = new ObservableCollection<ShoppingList> { ShoppingList };
+                _dataService.SaveShoppingLists(shoppingLists, filePath);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error saving shopping list: {ex.Message}");
+            }
         }
     }
 }
