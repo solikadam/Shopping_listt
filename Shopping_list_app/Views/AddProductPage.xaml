@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ShoppingListApp.Views.AddProductPage">
+             x:Class="ShoppingListApp.Views.AddProductPage"
+             BackgroundColor="#383838">
     <StackLayout Padding="10">
-        <Picker x:Name="ProductPicker" Title="Wybierz produkt" />
-        <Label Text="Lub dodaj nowy produkt" />
-        <Entry x:Name="NewProductNameEntry" Placeholder="Wpisz nazwę nowego produktu" />
-        <Label Text="Ilość" />
-        <Entry x:Name="ProductQuantityEntry" Placeholder="Wpisz ilość" Keyboard="Numeric" />
-        <Picker x:Name="ProductUnitPicker" Title="Wybierz jednostkę" />
-        <Picker x:Name="CategoryPicker" Title="Wybierz kategorię" />
-        <Button Text="Dodaj produkt" Clicked="AddProductButton_Clicked" />
+        <Picker x:Name="ProductPicker" Title="Wybierz produkt" BackgroundColor="#282828" TitleColor="White" FontSize="20" TextColor="white"/>
+        <Label Text="Lub dodaj nowy produkt" FontSize="20" TextColor="White"/>
+        <Entry x:Name="NewProductNameEntry" Placeholder="Wpisz nazwę nowego produktu"
+               BackgroundColor="#282828" 
+               PlaceholderColor="White"
+               TextColor="white"/>
+        <Label Text="Ilość" FontSize="20" TextColor="White"/>
+        <Entry x:Name="ProductQuantityEntry" Placeholder="Wpisz ilość"
+               Keyboard="Numeric"
+               BackgroundColor="#282828" 
+               PlaceholderColor="White"
+               TextColor="white"/>
+        <Picker x:Name="ProductUnitPicker" Title="Wybierz jednostkę" BackgroundColor="#282828" TitleColor="White" FontSize="20" TextColor="white"/>
+        <Picker x:Name="CategoryPicker" Title="Wybierz kategorię" BackgroundColor="#282828" TitleColor="White" FontSize="20" TextColor="white"/>
+        <Button Text="Dodaj produkt" Clicked="AddProductButton_Clicked" BackgroundColor="#5A6" />
     </StackLayout>
 </ContentPage>
 

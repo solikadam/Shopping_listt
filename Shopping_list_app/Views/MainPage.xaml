@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ShoppingListApp.MainPage">
+             x:Class="ShoppingListApp.MainPage"
+             BackgroundColor="#383838">
     <StackLayout Padding="10">
-        <Button Text="Dodaj nową listę zakupową" Clicked="AddShoppingListButton_Clicked" />
+        <Button Text="Dodaj nową listę zakupową" Clicked="AddShoppingListButton_Clicked" TextColor="white" BackgroundColor="#5A6"/>
         <CollectionView ItemsSource="{Binding ShoppingLists}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Orientation="Horizontal">
-                        <Button Text="{Binding Name}" Clicked="OpenShoppingListButton_Clicked" CommandParameter="{Binding .}" />
+                        <Button Text="{Binding Name}" Clicked="OpenShoppingListButton_Clicked" CommandParameter="{Binding .}" BackgroundColor="#282828" WidthRequest="1350" HeightRequest="50" TextColor="white"/>
                         <Button Text="Usuń" Clicked="DeleteShoppingListButton_Clicked" CommandParameter="{Binding .}" BackgroundColor="Red" TextColor="White" />
                     </StackLayout>
                 </DataTemplate>

@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ShoppingListApp.Views.AddShoppingListPage">
+             x:Class="ShoppingListApp.Views.AddShoppingListPage"
+             BackgroundColor="#383838">
     <StackLayout Padding="10">
-        <Label Text="Nazwa nowej listy zakupowej" />
-        <Entry x:Name="ListNameEntry" Placeholder="Wpisz nazwę listy" />
-        <Button Text="Dodaj listę" Clicked="AddListButton_Clicked" />
+        <Label Text="Nazwa nowej listy zakupowej" TextColor="White" FontSize="20"/>
+        <Entry x:Name="ListNameEntry" Placeholder="Wpisz nazwę listy" PlaceholderColor="white" BackgroundColor="#282828"/>
+        <Button Text="Dodaj listę" Clicked="AddListButton_Clicked" BackgroundColor="#5A6" TextColor="white"/>
     </StackLayout>
 </ContentPage>

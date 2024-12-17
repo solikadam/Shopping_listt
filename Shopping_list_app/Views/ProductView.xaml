@@ -3,16 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:ShoppingListApp.Views"
              x:Class="ShoppingListApp.Views.ProductView">
-    <Frame Padding="10" Margin="5" HasShadow="True" BackgroundColor="#181818">
+    <Frame Padding="10" Margin="5" HasShadow="True" BackgroundColor="#383838">
         <StackLayout Orientation="Horizontal" Spacing="10">
-            <CheckBox IsChecked="{Binding IsPurchased}" CheckedChanged="OnPurchasedChanged" />
+            <CheckBox IsChecked="{Binding IsPurchased}" CheckedChanged="OnPurchasedChanged"/>
             <Label x:Name="ProductLabel" VerticalOptions="Center">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="{Binding Name}" FontSize="20" FontAttributes="Bold" />
+                        <Span Text="{Binding Name}" FontSize="20" FontAttributes="Bold" TextColor="white"/>
                         <Span Text="        " />
-                        <Span Text="{Binding Quantity, StringFormat='Ilość: {0}'}" FontSize="14" />
-                        <Span Text="{Binding Unit}" FontSize="14" />
+                        <Span Text="{Binding Quantity, StringFormat='Ilość: {0}'}" FontSize="14" TextColor="white" />
+                        <Span Text="{Binding Unit}" FontSize="14" TextColor="white"/>
                     </FormattedString>
                 </Label.FormattedText>
             </Label>

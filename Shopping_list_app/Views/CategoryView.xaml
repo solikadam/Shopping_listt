@@ -5,11 +5,12 @@
              x:Class="ShoppingListApp.Views.CategoryView">
     <Frame Padding="10" Margin="5" HasShadow="True" BackgroundColor="#393939">
         <StackLayout>
-            <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" />
-            <Button Text="Rozwiń" Clicked="ToggleExpand" />
+            <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" TextColor="white"/>
+            <Button Text="Rozwiń" Clicked="ToggleExpand" BackgroundColor="#AC6"/>
             <CollectionView ItemsSource="{Binding Products}"
                             IsVisible="{Binding IsExpanded}"
-                            HeightRequest="200">
+                            HeightRequest="200"
+                            BackgroundColor="#282828">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <views:ProductView />

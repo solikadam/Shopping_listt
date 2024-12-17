@@ -1,3 +1,6 @@
+using Android.Graphics.Fonts;
+using Android.Media;
+using Microsoft.Maui.Graphics.Text;
 using ShoppingListApp.Models;
 using System;
 
